@@ -1,0 +1,17 @@
+{% extends "admin/base.html" %}
+
+
+{% block title %}Let's Quiz Administration{% endblock %}
+
+{% block branding %}
+<div id="site-name" style="display: inline-block;">
+    <a href="{% url 'admin:index' %}" style="text-decoration: none;">
+        <span style="font-size: 1.2rem; font-weight: bold; color: #ffc107;">🎯 Let's Quiz</span>
+        <span style="font-size: 0.85rem; background-color: #ffc107; color: #2c3e50; padding: 2px 8px; border-radius: 4px; margin-left: 10px;">
+            Admin Panel
+        </span>
+    </a>
+</div>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

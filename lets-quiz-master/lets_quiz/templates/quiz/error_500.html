@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} Let's Quiz | Internal Server Error {% endblock title %}
+{% block content %}
+	<div class="container my-5">
+		<div class="alert alert-danger text-center shadow-sm" role="alert">
+			<i class="fas fa-exclamation-circle fa-3x mb-3"></i>
+	        <h4 class="alert-heading mb-3">Internal Server Error</h4>
+	        <p class="mb-0">There is an error with our server. We are working to fix it and will be back soon.</p>
+	        <hr class="my-3">
+	        <p class="mb-0">Please try again later or <a href="{% url 'quiz:home' %}" class="alert-link">return to homepage</a>.</p>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %} Let's Quiz | Welcome {% endblock title %}
+{% block content %}
+<div class="container my-4">
+    <div class="bg-light p-4 rounded">
+
+	      <h2 class="text-center text-info mb-4">Congratulations!! You have successfully logged in.</h2>
+	      <h3 class="text-info text-center mb-4">Before you play the quiz, here are the rules</h3>
+
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card border-info shadow-sm">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="card-title mb-0"><i class="fas fa-list"></i> Rules & Guidelines</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="fas fa-check-circle text-info me-2"></i> All questions are multiple choice question.</li>
+                            <li class="list-group-item"><i class="fas fa-exclamation-triangle text-danger me-2"></i> <span class="text-danger fw-bold">Only one choice is correct.</span></li>
+                            <li class="list-group-item"><i class="fas fa-star text-warning me-2"></i> Every question carry equal marks i.e. <span class="text-danger fw-bold">4 marks for each question.</span></li>
+                            <li class="list-group-item"><i class="fas fa-user-check text-info me-2"></i> Every question is displayed only once per user.</li>
+                            <li class="list-group-item"><i class="fas fa-clock text-info me-2"></i> Try to answer as quickly as you can.</li>
+                            <li class="list-group-item"><i class="fas fa-sync-alt text-warning me-2"></i> If you press refresh or go back to the previous page, there will be a new question for you and the question you were on will be counted as attempted.</li>
+                            <li class="list-group-item"><i class="fas fa-random text-info me-2"></i> Questions are displayed randomly for every user.</li>
+                            <li class="list-group-item"><i class="fas fa-bell text-info me-2"></i> You will be told immediately whether your answer was correct or incorrect once you submit the answer.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-light text-center">
+                        <a href="{% url 'quiz:play' %}" class="btn btn-info btn-lg"><i class="fas fa-play"></i> Let's play</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

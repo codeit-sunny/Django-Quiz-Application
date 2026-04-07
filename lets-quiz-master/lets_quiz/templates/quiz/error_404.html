@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} Let's Quiz | Page Not Found {% endblock title %}
+{% block content %}
+	<div class="container my-5">
+		<div class="alert alert-danger text-center shadow-sm" role="alert">
+			<i class="fas fa-exclamation-triangle fa-3x mb-3"></i>
+	        <h4 class="alert-heading mb-3">Error 404: Page not found</h4>
+	        <p class="mb-0">The page you are looking for does not exist. <a href="{% url 'quiz:home' %}" class="alert-link">Go back to homepage</a></p>
+        </div>
+    </div>
+{% endblock content %}

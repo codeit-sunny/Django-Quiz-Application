@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Home - Let's Quiz{% endblock %}
+{% block content %}
+<div class="hero-section text-center" data-aos="fade-up">
+    <div class="container">
+        <h1 class="display-1 fw-bold mb-4">
+            <i class="fas fa-question-circle me-3"></i>Let's Quiz
+        </h1>
+        <p class="display-6 mb-4">Test your skills and become a master!</p>
+        <p class="lead mb-5">We organize quizzes on various topics to challenge your knowledge.</p>
+        
+        {% if not request.user.is_authenticated %}
+        <div class="card bg-white bg-opacity-10 d-inline-block p-4 rounded-4">
+            <p class="mb-3">✨ Join thousands of learners worldwide ✨</p>
+            <a href="{% url 'quiz:register' %}" class="btn btn-light btn-lg">
+                <i class="fas fa-user-plus me-2"></i>Start Your Journey
+            </a>
+        </div>
+        {% else %}
+        <div>
+            <a href="{% url 'quiz:play' %}" class="btn btn-light btn-lg me-3">
+                <i class="fas fa-play me-2"></i>Start Quiz
+            </a>
+            <a href="{% url 'quiz:leaderboard' %}" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-trophy me-2"></i>View Leaderboard
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="container mt-5">
+    <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 text-center border-0 shadow">
+                <div class="card-body">
+                    <i class="fas fa-random fa-3x text-primary mb-3"></i>
+                    <h4>Random Questions</h4>
+                    <p>Each quiz session presents unique random questions</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 text-center border-0 shadow">
+                <div class="card-body">
+                    <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
+                    <h4>Track Progress</h4>
+                    <p>Monitor your score and improve over time</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 text-center border-0 shadow">
+                <div class="card-body">
+                    <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
+                    <h4>Compete & Win</h4>
+                    <p>Climb the leaderboard and showcase your knowledge</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
